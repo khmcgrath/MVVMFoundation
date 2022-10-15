@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
+options: "f6b23fce093569638a7b7cba1af37d396e6d4cd8206fb270c59f6ba9002b9ea5"
+build_start_time: [1665802403, 703449964]
+build_end_time: [1665802404, 382312059]
+inputs:
+  "/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/Sources/MVVMFoundation/MVVMFoundation.swift": [1665801828, 679256916]

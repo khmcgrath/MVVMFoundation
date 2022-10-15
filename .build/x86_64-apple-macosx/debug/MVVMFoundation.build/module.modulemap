@@ -1,0 +1,4 @@
+module MVVMFoundation {
+    header "/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.build/MVVMFoundation-Swift.h"
+    requires objc
+}

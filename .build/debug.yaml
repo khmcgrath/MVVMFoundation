@@ -1,0 +1,80 @@
+client:
+  name: basic
+tools: {}
+targets:
+  "MVVMFoundation-debug.module": ["<MVVMFoundation-debug.module>"]
+  "MVVMFoundationPackageTests-debug.test": ["<MVVMFoundationPackageTests-debug.test>"]
+  "MVVMFoundationTests-debug.module": ["<MVVMFoundationTests-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<MVVMFoundation-debug.module>"]
+  "test": ["<MVVMFoundation-debug.module>","<MVVMFoundationPackageTests-debug.test>","<MVVMFoundationTests-debug.module>"]
+default: "main"
+nodes:
+  "/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/Sources/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/Tests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "<MVVMFoundation-debug.module>":
+    tool: phony
+    inputs: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.build/MVVMFoundation/MVVMFoundation.swift.o","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.swiftmodule"]
+    outputs: ["<MVVMFoundation-debug.module>"]
+
+  "<MVVMFoundationPackageTests-debug.test>":
+    tool: phony
+    inputs: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundationPackageTests.xctest/Contents/MacOS/MVVMFoundationPackageTests"]
+    outputs: ["<MVVMFoundationPackageTests-debug.test>"]
+
+  "<MVVMFoundationTests-debug.module>":
+    tool: phony
+    inputs: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundationTests.build/MVVMFoundationTests/MVVMFoundationTests.swift.o","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundationTests.swiftmodule"]
+    outputs: ["<MVVMFoundationTests-debug.module>"]
+
+  "C.MVVMFoundation-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/Sources/MVVMFoundation/MVVMFoundation.swift"]
+    outputs: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.build/MVVMFoundation/MVVMFoundation.swift.o","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "MVVMFoundation"
+    module-output-path: "/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.swiftmodule"
+    import-paths: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.build"
+    objects: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.build/MVVMFoundation/MVVMFoundation.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.13","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-g","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.build/MVVMFoundation-Swift.h","-color-diagnostics","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib"]
+    sources: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/Sources/MVVMFoundation/MVVMFoundation.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 8
+
+  "C.MVVMFoundationPackageTests-debug.test":
+    tool: shell
+    inputs: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.build/MVVMFoundation/MVVMFoundation.swift.o","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundationTests.build/MVVMFoundationTests/MVVMFoundationTests.swift.o"]
+    outputs: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundationPackageTests.xctest/Contents/MacOS/MVVMFoundationPackageTests"]
+    description: "Linking ./.build/x86_64-apple-macosx/debug/MVVMFoundationPackageTests.xctest/Contents/MacOS/MVVMFoundationPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug","-o","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundationPackageTests.xctest/Contents/MacOS/MVVMFoundationPackageTests","-module-name","MVVMFoundationPackageTests","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundationPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/macosx","-target","x86_64-apple-macosx11.0","-Xlinker","-add_ast_path","-Xlinker","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundationTests.swiftmodule","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"]
+
+  "C.MVVMFoundationTests-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/Tests/MVVMFoundationTests/MVVMFoundationTests.swift","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.swiftmodule"]
+    outputs: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundationTests.build/MVVMFoundationTests/MVVMFoundationTests.swift.o","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundationTests.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "MVVMFoundationTests"
+    module-output-path: "/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundationTests.swiftmodule"
+    import-paths: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundationTests.build"
+    objects: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundationTests.build/MVVMFoundationTests/MVVMFoundationTests.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx11.0","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-g","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib"]
+    sources: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/Tests/MVVMFoundationTests/MVVMFoundationTests.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 8
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/Sources/","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/Tests/","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/Package.swift","/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

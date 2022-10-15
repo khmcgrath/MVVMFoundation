@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.build/master.swiftdeps"
+  },
+  "/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/Sources/MVVMFoundation/MVVMFoundation.swift": {
+    "dependencies": "/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.build/MVVMFoundation/MVVMFoundation.d",
+    "object": "/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.build/MVVMFoundation/MVVMFoundation.swift.o",
+    "swiftmodule": "/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.build/MVVMFoundation/MVVMFoundation~partial.swiftmodule",
+    "swift-dependencies": "/Users/kieranmcgrath/repos/iTorrent/submodules/MVVMFoundation/.build/x86_64-apple-macosx/debug/MVVMFoundation.build/MVVMFoundation/MVVMFoundation.swiftdeps"
+  }
+}
